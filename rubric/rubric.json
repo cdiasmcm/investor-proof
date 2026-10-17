@@ -1,0 +1,224 @@
+{
+  "rubric_version": "1.1.0",
+  "name": "Perfect VC Pitch Rubric",
+  "sources": [
+    "A review of 23 early-stage startup pitch decks from an MBA entrepreneurship course",
+    "Common venture-capital pitch deck frameworks (purpose, problem, solution, market, why now, competition, product, business model, team, financials, ask)",
+    "A score-times-confidence approach to startup concept assessment"
+  ],
+  "scale": {
+    "levels": {
+      "0": "Absent: not mentioned at all",
+      "1": "Mentioned: named in passing, no substance",
+      "2": "Partial: covered, but asserted without evidence or missing key parts",
+      "3": "Solid: covered well with some evidence; one part thin",
+      "4": "Investor-grade: complete, specific, backed by data or named evidence"
+    },
+    "level_to_fraction": {
+      "0": 0,
+      "1": 0.25,
+      "2": 0.5,
+      "3": 0.75,
+      "4": 1
+    },
+    "evidence_cap": "A criterion whose claims rest only on assertion (no numbers, sources, named customers, interviews or documents) cannot score above level 2."
+  },
+  "criteria": [
+    {
+      "id": "C01",
+      "name": "Company purpose (the hook)",
+      "weight": 5,
+      "perfect": [
+        "One declarative sentence says what the company does, for whom, and the outcome",
+        "Stated in the first 30 seconds; a listener could repeat it",
+        "A memorable framing (an 'X for Y' analogy) is a plus"
+      ],
+      "common_gaps": [
+        "Opens with team or industry stats before saying what the company is",
+        "Mission-speak instead of a concrete sentence"
+      ]
+    },
+    {
+      "id": "C02",
+      "name": "Problem",
+      "weight": 9,
+      "perfect": [
+        "A specific customer with a specific pain, quantified (time, money, risk)",
+        "How the customer solves it today and why that workaround fails",
+        "Who pays for the problem, if different from who feels it"
+      ],
+      "common_gaps": [
+        "Generic pain ('X is hard') with no numbers",
+        "No description of today's workaround"
+      ]
+    },
+    {
+      "id": "C03",
+      "name": "Solution and how it works",
+      "weight": 7,
+      "perfect": [
+        "Value proposition tied point-by-point to the problem",
+        "How it works: concept flow, product walkthrough or demo",
+        "A concrete use case or customer story showing life before and after"
+      ],
+      "common_gaps": [
+        "Feature list with no link back to the pain",
+        "No explanation of how the product is delivered"
+      ]
+    },
+    {
+      "id": "C04",
+      "name": "Customer validation and traction",
+      "weight": 12,
+      "perfect": [
+        "Number of customer interviews or surveys stated (e.g. '30 interviews + 120 surveys')",
+        "Named or role-attributed customer quotes that confirm the pain and willingness to pay",
+        "Hard commitments: LOIs, pilots, pre-orders, waitlist, revenue, grants or partners",
+        "What the team learned or changed because of the feedback"
+      ],
+      "common_gaps": [
+        "No interviews mentioned",
+        "Quotes only from friendly advisors",
+        "'People love it' with no count or source"
+      ]
+    },
+    {
+      "id": "C05",
+      "name": "Market size and target customer",
+      "weight": 8,
+      "perfect": [
+        "TAM top-down, SAM and SOM bottom-up, with sources and the arithmetic shown",
+        "A defined beachhead (geography or segment) and why it was chosen",
+        "A target customer persona with demographics, behaviours and buying patterns"
+      ],
+      "common_gaps": [
+        "Huge top-down TAM with no bottom-up SOM",
+        "No persona",
+        "Numbers without a source"
+      ]
+    },
+    {
+      "id": "C06",
+      "name": "Why now (market drivers)",
+      "weight": 3,
+      "perfect": [
+        "Two or more sourced trends (regulatory, technology, demographic, behaviour) that make the timing right",
+        "Explains why this was not possible or needed five years ago"
+      ],
+      "common_gaps": [
+        "Industry growth rate quoted as the only driver"
+      ]
+    },
+    {
+      "id": "C07",
+      "name": "Competition and defensible advantage",
+      "weight": 8,
+      "perfect": [
+        "Named direct and indirect competitors, including the status quo",
+        "An honest comparison (not a grid where the startup wins every row)",
+        "A durable advantage: IP, data, network effects, exclusive partners, cost or switching costs",
+        "Answers 'what stops a big player copying this?'"
+      ],
+      "common_gaps": [
+        "'We have no competitors'",
+        "Differentiators that are easy to copy (better UX, local)"
+      ]
+    },
+    {
+      "id": "C08",
+      "name": "Business model and unit economics",
+      "weight": 12,
+      "perfect": [
+        "Who pays, how much, how often; every revenue stream named with its relative size",
+        "Pricing validated by customers or comparables",
+        "Unit economics worked through: price, cost per unit, contribution or gross margin",
+        "Customer acquisition cost and lifetime value (or payback period)"
+      ],
+      "common_gaps": [
+        "Several revenue streams with no sense of which matters",
+        "Margins never stated",
+        "No CAC or LTV"
+      ]
+    },
+    {
+      "id": "C09",
+      "name": "Go-to-market, launch and growth plan",
+      "weight": 9,
+      "perfect": [
+        "Channels and message mapped to the funnel (awareness, interest, desire, action)",
+        "Launch plan: where you start, first 90 days, first customers",
+        "Sales motion and adoption pace (customers per month or quarter)",
+        "Growth plan over 36 months with milestones and expansion markets"
+      ],
+      "common_gaps": [
+        "'Social media and word of mouth' with no numbers",
+        "No timeline or adoption rate"
+      ]
+    },
+    {
+      "id": "C10",
+      "name": "Team and advisors",
+      "weight": 7,
+      "perfect": [
+        "Each founder's role plus the specific experience that makes them able to execute",
+        "Advisors or board who fill named gaps (industry, regulatory, technical)",
+        "Admits open roles and the plan to fill them"
+      ],
+      "common_gaps": [
+        "Titles with no relevant experience",
+        "Advisors listed without saying what they add"
+      ]
+    },
+    {
+      "id": "C11",
+      "name": "Financials and assumptions",
+      "weight": 7,
+      "perfect": [
+        "3-year projection: revenue, costs, net income, cash flow",
+        "Key assumptions stated and sourced (conversion, retention, price, CAC)",
+        "Break-even point (month/quarter and units) and startup costs",
+        "Sensitivity or downside case; numbers consistent across the pitch"
+      ],
+      "common_gaps": [
+        "Hockey stick with no assumptions",
+        "Numbers that contradict each other (price, margin)",
+        "No break-even"
+      ]
+    },
+    {
+      "id": "C12",
+      "name": "The ask, use of funds and investor return",
+      "weight": 7,
+      "perfect": [
+        "Exact amount raised and instrument or terms offered",
+        "Use of funds broken down, and the milestone it reaches (break-even or next round)",
+        "How investors get a return: exit paths with likely acquirers or comparables"
+      ],
+      "common_gaps": [
+        "Ask stated with no breakdown",
+        "No exit discussed",
+        "Funds don't reach break-even"
+      ]
+    },
+    {
+      "id": "C13",
+      "name": "Delivery and storytelling",
+      "weight": 6,
+      "perfect": [
+        "Clear narrative arc: hook, problem, solution, proof, plan, ask, strong close",
+        "Fits about 10 minutes (roughly 1,200-1,600 spoken words)",
+        "Plain language, confident tone, no filler; numbers stated precisely",
+        "Hand-offs between presenters are smooth (if a team pitch)"
+      ],
+      "common_gaps": [
+        "Reads slides",
+        "Runs long",
+        "Ends without a call to action"
+      ]
+    }
+  ],
+  "not_scored_from_transcript": [
+    "Slide design and visuals: not visible in a transcript",
+    "Live presence and Q&A: judged in the room, not from text"
+  ]
+}

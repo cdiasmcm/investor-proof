@@ -1,0 +1,156 @@
+{
+  "request_id": "lens-7e7f38388252",
+  "status": "completed",
+  "exit_reason": "done",
+  "result": {
+    "company_name": "ShelfSense",
+    "is_pitch": true,
+    "total_score": 73,
+    "band": "Strong",
+    "report_path": "samples/strong-pitch-7e7f38388252.html",
+    "criteria": [
+      {
+        "id": "C01",
+        "name": "Company purpose (the hook)",
+        "weight": 5,
+        "level": 4,
+        "points": 5,
+        "must_have": false,
+        "action": ""
+      },
+      {
+        "id": "C02",
+        "name": "Problem",
+        "weight": 9,
+        "level": 4,
+        "points": 9,
+        "must_have": false,
+        "action": ""
+      },
+      {
+        "id": "C03",
+        "name": "Solution and how it works",
+        "weight": 7,
+        "level": 4,
+        "points": 7,
+        "must_have": false,
+        "action": "Optional: back the Rosa story with her dollar savings per month compared with the $299 fee, e.g. 'she saves about $1,100 a month in berries alone, nearly 4x the subscription.'"
+      },
+      {
+        "id": "C04",
+        "name": "Customer validation and traction",
+        "weight": 12,
+        "level": 3,
+        "points": 9,
+        "must_have": true,
+        "action": "Add one sentence on what the pilot changed, e.g. 'Pilot managers ignored lists longer than five items, so we cut the morning list to the top three actions and daily use went from 40% to 85%.' Also explain why three of the eight stores didn't convert."
+      },
+      {
+        "id": "C05",
+        "name": "Market size and target customer",
+        "weight": 8,
+        "level": 2,
+        "points": 4,
+        "must_have": true,
+        "action": "Fix and show the arithmetic with a source, e.g. '21,000 stores (cite your industry association source) × $3,588 a year = $75M SAM; beachhead 1,900 × $3,588 = $6.8M; SOM of 2,400 stores by year three = $8.6M.' Add a persona: a 1-10 store owner-operator, typical revenue, who places orders and how often."
+      },
+      {
+        "id": "C06",
+        "name": "Why now (market drivers)",
+        "weight": 3,
+        "level": 3,
+        "points": 2.25,
+        "must_have": false,
+        "action": "Put numbers and sources on both trends, e.g. 'X% of independents now run cloud point-of-sale systems, up from Y% in 2020 (source)' and 'fresh produce prices are up Z% since 2022 (government price data).'"
+      },
+      {
+        "id": "C07",
+        "name": "Competition and defensible advantage",
+        "weight": 8,
+        "level": 1,
+        "points": 2,
+        "must_have": true,
+        "action": "Name two or three competitors (enterprise forecasting vendors, point-of-sale vendors' built-in analytics, waste-tracking apps), give an honest comparison, and state the moat, e.g. 'exclusive cooperative distribution agreements, plus a cross-store spoilage dataset that improves forecasts with every store, which point-of-sale vendors don't have.'"
+      },
+      {
+        "id": "C08",
+        "name": "Business model and unit economics",
+        "weight": 12,
+        "level": 3,
+        "points": 9,
+        "must_have": true,
+        "action": "Validate the price and churn, e.g. 'At an average $4,200 a month in waste saved per store, $299 is 7% of the value; we tested $199/$299/$399 and conversion held at $299.' Say how many store-months of churn data back the 2.5% figure."
+      },
+      {
+        "id": "C09",
+        "name": "Go-to-market, launch and growth plan",
+        "weight": 9,
+        "level": 3,
+        "points": 6.75,
+        "must_have": false,
+        "action": "Map the funnel with rates, e.g. 'each buying show reaches about 300 owners, 20% book a demo, 35% start a trial, 70% convert.' Add 36-month milestones with named next regions and cooperatives."
+      },
+      {
+        "id": "C10",
+        "name": "Team and advisors",
+        "weight": 7,
+        "level": 3,
+        "points": 5.25,
+        "must_have": false,
+        "action": "Name the employers and the advisor, and state the hiring gap, e.g. 'Our first hire from this round is a cooperative partnerships lead with grocery SaaS sales experience.'"
+      },
+      {
+        "id": "C11",
+        "name": "Financials and assumptions",
+        "weight": 7,
+        "level": 3,
+        "points": 5.25,
+        "must_have": false,
+        "action": "Add the monthly operating cost base and cash curve, e.g. 'operating costs of about $175k a month at break-even; cumulative burn peaks at $1.3M in month 19.' Reconcile the year-one store count with the 140 + 40-a-month plan."
+      },
+      {
+        "id": "C12",
+        "name": "The ask, use of funds and investor return",
+        "weight": 7,
+        "level": 2,
+        "points": 3.5,
+        "must_have": true,
+        "action": "State the terms and the exit, e.g. '$1.5M convertible note, $8M cap, 20% discount.' Name likely acquirers (point-of-sale providers, grocery wholesalers, food-waste platforms) and a comparable acquisition. Show the cash bridge to month 20."
+      },
+      {
+        "id": "C13",
+        "name": "Delivery and storytelling",
+        "weight": 6,
+        "level": 3,
+        "points": 4.5,
+        "must_have": false,
+        "action": "Use the spare ~3 minutes on a real competition and moat section and an exit slide, e.g. 'Here's why a point-of-sale vendor can't copy us, and here's who buys companies like us.'"
+      }
+    ]
+  },
+  "provenance": [
+    "strong-pitch.txt",
+    "rubric v1.1.0"
+  ],
+  "flags": [
+    "fictional_sample",
+    "market_math_error",
+    "runway_vs_breakeven_doubt"
+  ],
+  "dq": {
+    "input": "passed",
+    "output_schema": "passed",
+    "evidence_grounded": "passed"
+  },
+  "metrics": {
+    "cost_usd": 0.185,
+    "latency_ms": 63693
+  },
+  "versions": {
+    "agent": "0.2.0",
+    "prompt": "1.1.0",
+    "model": "opus",
+    "contract": "investorproof-result v1",
+    "rubric": "1.1.0"
+  }
+}

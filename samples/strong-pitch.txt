@@ -1,0 +1,29 @@
+[Fictional sample for testing. All companies, people, quotes and numbers are invented.]
+
+MAYA: Hi everyone. ShelfSense predicts which fresh products an independent grocery store will throw away next week, so owners order less waste and sell more. Think of it as a weather forecast for spoilage.
+
+Independent grocers lose money in the produce aisle every single day. The stores we work with throw away between 6 and 9 percent of their fresh stock. For a store doing 4 million dollars a year in fresh sales, that is up to 360,000 dollars in the bin. Today the owner orders by gut feel and a paper notebook, and big chains have forecasting teams that independents simply can't afford.
+
+We didn't guess at this. Over four months we interviewed 41 store owners and produce managers and surveyed another 130. Thirty-four of the 41 told us waste is their biggest controllable cost. One owner of a three-store group told us, "I know I'm overordering lettuce, I just don't know by how much." A produce manager said, "If something told me Thursday what won't sell by Sunday, I'd pay for it tomorrow."
+
+DEV: Here's how it works. ShelfSense connects to the store's point-of-sale system in about twenty minutes. Every night it reads sales, deliveries and the local weather forecast, and every morning the produce manager gets a short list on their phone: order four cases of berries instead of seven, mark down the avocados today. Take Rosa, who runs a single store. Before ShelfSense she threw out two crates of berries every weekend. In our pilot she cut berry waste by half in six weeks.
+
+That pilot is our traction. Eight stores ran ShelfSense free for twelve weeks. Average fresh waste dropped from 7.8 percent to 5.1 percent. Five of the eight converted to paid plans, and we hold signed letters of intent from two regional grocery cooperatives that together represent 140 stores.
+
+The market. There are about 21,000 independent grocery stores in the country, our serviceable market, and at our price that is roughly 250 million dollars a year. Our beachhead is independents with one to ten stores in three neighbouring states where our cooperative partners operate, about 1,900 stores, chosen because the cooperatives give us one buyer for many stores.
+
+Why now? Two things changed. Cloud point-of-sale systems now expose their data through open connections, which wasn't true for small stores five years ago. And food costs have risen sharply since 2022, so owners now feel every lost crate.
+
+LENA: Business model. We charge 299 dollars per store per month. Serving a store costs us about 45 dollars a month in data and support, so our gross margin is about 85 percent. Through the cooperatives our customer acquisition cost is about 600 dollars per store. With the churn we've seen so far, a store stays about 40 months, so lifetime value is around 10,000 dollars, a payback of just over two months.
+
+Go to market. We sell through the cooperatives first: they introduce us at their buying shows, and we offer a 30-day guarantee. In the first 90 days after funding we will onboard the 140 stores under our letters of intent. After that we add about 40 stores a month through cooperative referrals, and in year two we open two more regions.
+
+Competition. Big-chain forecasting software exists, but it's built for chains. Mostly our competitor is the notebook.
+
+Financials. We project 380 paying stores at the end of year one, 1,100 in year two and 2,400 in year three, which is about 8.6 million dollars of annual revenue in year three. We reach break-even in month 20 with about 700 stores. Our main assumptions are the 299 dollar price, monthly churn of 2.5 percent and a 600 dollar acquisition cost. If acquisition cost doubles, break-even moves to month 27.
+
+MAYA: Our team. I spent eight years as a buyer for a regional grocery wholesaler, so I know how these stores order. Dev was a machine learning engineer working on demand forecasting at a logistics software company. Lena was the finance lead at a restaurant software startup that grew from ten to two hundred customers. Our advisor ran a 12-store independent grocery group for twenty years.
+
+We are raising 1.5 million dollars on a convertible note. Half goes to engineering, 30 percent to sales and cooperative partnerships, and 20 percent to operations. It takes us past break-even with six months of buffer.
+
+Every store we sign throws away less food and keeps more profit. Join us, and help us put a forecasting team in every independent grocery store. Thank you.

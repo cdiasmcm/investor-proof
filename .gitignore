@@ -1,0 +1,20 @@
+# Generated reports (keep the folder)
+reports/*
+!reports/.gitkeep
+
+# Real transcripts and subtitle files never go in the repo
+transcripts/
+*.vtt
+*.srt
+*-[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].html
+*-[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].json
+
+# Local-only publish-guard terms
+.publiccheck-denylist
+
+# Tooling and OS files
+node_modules/
+*.local.*
+desktop.ini
+.DS_Store
+Thumbs.db

@@ -1,0 +1,15 @@
+{
+  "name": "investorproof",
+  "version": "0.4.0",
+  "description": "Score a startup pitch transcript the way a venture investor would: one score out of 100, a breakdown and must-have fixes.",
+  "license": "MIT",
+  "type": "module",
+  "private": false,
+  "bin": { "investorproof": "src/score.ts" },
+  "scripts": {
+    "score": "bun src/score.ts",
+    "test": "bun test"
+  },
+  "engines": { "bun": ">=1.1" },
+  "keywords": ["pitch", "startup", "venture-capital", "rubric", "llm", "claude"]
+}
