@@ -260,7 +260,7 @@ footer{margin-top:36px;font-size:12px;color:var(--muted)}
 
 <footer>
   <p><b>Not scored from a transcript:</b> Slide design and visuals: not visible in a transcript · Live presence and Q&amp;A: judged in the room, not from text.</p>
-  <p>Source: strong-pitch.txt · 767 words · model any-model · agent v0.6.0 · rubric v1.1.0 · fixture</p>
+  <p>Source: strong-pitch.txt · 767 words · model any-model · agent v0.6.1 · rubric v1.1.0 · fixture</p>
   <p>Levels are AI-graded and every quote is checked against the transcript; points and the total are computed by code. Treat it as coaching, not an investment verdict.</p>
 </footer>
 </main></body></html>"

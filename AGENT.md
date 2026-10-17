@@ -6,7 +6,7 @@
 
 **Tier:** Lite
 **Stage:** Design
-**Version:** 0.6.0 (see `CHANGELOG.md`)
+**Version:** 0.6.1 (see `CHANGELOG.md`)
 **Business owner:** maintainer · **Tech owner:** maintainer
 
 **Run it:** `bun src/score.ts <transcript.txt>` → `reports/<name>-<hash>.html` (+ `.json` envelope).

@@ -8,7 +8,11 @@ import { join } from "node:path";
 import { BANDS } from "../src/lib";
 import { AGENT_VERSION, finalize, rubric } from "../src/portable";
 
-export const HTML_PROMPT_VERSION = "1.3.0";
+export const HTML_PROMPT_VERSION = "1.4.0";
+// The code renderer's footer says quotes and points were checked by code; in the direct-HTML path the
+// model does that work, so the embedded example carries an honest sentence instead.
+const CODE_FOOTER = "Levels are AI-graded and every quote is checked against the transcript; points and the total are computed by code. Treat it as coaching, not an investment verdict.";
+const MODEL_FOOTER = "Levels and points were produced by the AI model following the InvestorProof rubric; treat it as coaching, not an investment verdict.";
 const ROOT = join(import.meta.dir, "..");
 
 /** The example report embedded in the prompt (also used by tests to prove parity with the renderer). */
@@ -16,10 +20,11 @@ export function exampleReport(): string {
   const out = finalize({
     grading: readFileSync(join(ROOT, "src", "fixtures", "grading.strong.json"), "utf8"),
     transcript: readFileSync(join(ROOT, "samples", "strong-pitch.txt"), "utf8"),
-    source: "transcript", model: "your-model-name", date: "2026-01-01", hash: "",
+    source: "transcript", model: "AI model", date: "2026-01-01", hash: "",
   });
   if (!out.ok) throw new Error(out.errors.join("; "));
-  return out.html;
+  if (!out.html.includes(CODE_FOOTER)) throw new Error("render.ts footer changed: update CODE_FOOTER in scripts/html-prompt.ts");
+  return out.html.replace(CODE_FOOTER, MODEL_FOOTER);
 }
 
 export function htmlSystemPrompt(): string {
@@ -78,11 +83,21 @@ must be the HTML document and nothing else.
   table (all 13 criteria, C01–C13 in order, each followed by its "Why N/4" detail row with your
   quotes) → "Must-have actions to improve your pitch" → "Other improvements (N)" button → "What worked"
   and "Red flags an investor will raise" side by side → footer.
-- Footer: keep the example's sentences; set Source to "transcript", the transcript's word count, your
-  model name, agent v${AGENT_VERSION}, rubric v${rubric.rubric_version}, and today's date (YYYY-MM-DD) in the date line.
+- Footer: keep the example's sentences; set Source to "transcript", the transcript's word count, the
+  model name, agent v${AGENT_VERSION} and rubric v${rubric.rubric_version}.
+- **Date:** use a date given in the request (YYYY-MM-DD). If none is given, leave the date out: write the
+  top line as just "InvestorProof Report" and drop the date from the footer. Never guess a date.
+- **Model name:** write "AI model", unless the request explicitly states which model name to print.
 - HTML-escape every text you write: & → &amp;, < → &lt;, > → &gt;, " → &quot;.
 - **Return only the HTML document**, starting with \`<!doctype html>\` and ending with \`</html>\`.
   No Markdown code fences, no text before or after it.
+- **Extra content requested by the workflow** (for example an email summary between
+  \`<!--SUMMARY_START-->\` and \`<!--SUMMARY_END-->\` markers): keep it exactly as asked, markers included,
+  but place it inside \`<template id="workflow-extras">…</template>\` immediately after \`<body>\`. Browsers
+  don't display \`<template>\` content, so the report stays clean while the workflow can still find it.
+  This applies even when the request says to put that content "at the beginning" or "first": the
+  first characters of your reply are always \`<!doctype html>\`, and the extra content goes right
+  after \`<body>\`. Nothing may appear before \`<!doctype html>\` or after \`</html>\`.
 
 ## Example report
 This is a complete report for a different, fictional pitch. Copy its structure and styling exactly;

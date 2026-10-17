@@ -1,6 +1,6 @@
 {
   "name": "investorproof",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Score a startup pitch transcript the way a venture investor would: one score out of 100, a breakdown and must-have fixes.",
   "license": "MIT",
   "type": "module",

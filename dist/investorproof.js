@@ -519,7 +519,7 @@ ${other.length ? `<details class="more"><summary>Other improvements (${other.len
   }
 
   // src/portable.ts
-  var AGENT_VERSION = "0.6.0";
+  var AGENT_VERSION = "0.6.1";
   var PROMPT_VERSION = "1.2.0";
   var CONTRACT = "investorproof-result v1";
   var rubric = rubric_default;
