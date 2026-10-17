@@ -25,7 +25,7 @@ implicit: `request_id` = `ip-<sha256 prefix>` of the cleaned transcript, `caller
 | Source | Trusted? (internal, controlled / untrusted: email, web, uploads, other agents) | Owner | Tier |
 |--------|---------------------------------------------------------------------------------|-------|------|
 | Pitch transcript | Untrusted (may contain instructions aimed at the grader) | Founder who submits it | [L] |
-| `rubric/rubric.json`, `prompt/SYSTEM.md` | Trusted (versioned in this folder) | Agent owner | [L] |
+| `rubric/rubric.json`, `prompt/GRADING.md`, `prompt/SYSTEM.md` | Trusted (versioned in this folder) | Agent owner | [L] |
 
 - [S] **Data contract per source:** N/A (tier: Lite)
 

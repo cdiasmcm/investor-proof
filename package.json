@@ -1,6 +1,6 @@
 {
   "name": "investorproof",
-  "version": "0.4.0",
+  "version": "0.6.0",
   "description": "Score a startup pitch transcript the way a venture investor would: one score out of 100, a breakdown and must-have fixes.",
   "license": "MIT",
   "type": "module",
@@ -8,6 +8,7 @@
   "bin": { "investorproof": "src/score.ts" },
   "scripts": {
     "score": "bun src/score.ts",
+    "build": "bun scripts/build.ts",
     "test": "bun test"
   },
   "engines": { "bun": ">=1.1" },

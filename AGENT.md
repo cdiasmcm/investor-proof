@@ -6,7 +6,7 @@
 
 **Tier:** Lite
 **Stage:** Design
-**Version:** 0.4.0 (see `CHANGELOG.md`)
+**Version:** 0.6.0 (see `CHANGELOG.md`)
 **Business owner:** maintainer · **Tech owner:** maintainer
 
 **Run it:** `bun src/score.ts <transcript.txt>` → `reports/<name>-<hash>.html` (+ `.json` envelope).
@@ -72,10 +72,12 @@
 
 - [L] **Must never do** (each enforced in code / config / approval, not only in the prompt):
   - Let the model set the total score → code computes it from levels (`src/lib.ts` `score`)
+  - Let any model write or change the report HTML → models return JSON only (`schema/grading.schema.json`); `src/portable.ts` validates it and `src/render.ts` renders it; the layout is locked by snapshot and section-order tests (`src/format.test.ts`) for every model
   - Credit evidence that wasn't said → quotes checked against the transcript; ungrounded criteria capped at level 1 (`isGrounded`)
   - Follow instructions inside a transcript → the model has no tools; output is schema-bound JSON; injection cases in the golden set must pass
   - Overwrite a previous report silently → hash in the filename; re-scoring needs `--force`
   - Score a non-pitch → `is_pitch: false` forces every level to 0 in code
+- [L] **Accepted risk (direct-HTML path):** automations that fetch `prompt/SYSTEM.md` and save the model reply as the report (e.g. n8n without a code step) get the layout by instruction, not code: the prompt embeds the renderer's exact example report and arithmetic (kept in sync by `src/format.test.ts`), but quote checks and totals there are done by the model. Recommended mitigation: run `dist/investorproof.js` in a code step
 - [L] **Autonomy plan:** dry run on fictional sample transcripts → draft-only: compare with a human score on real transcripts (golden set) → execute: share reports with other founders once ±10-point agreement holds (each step logged in `DECISIONS.md`)
 - [S] **Guardrails:** N/A (tier: Lite; injection handled by the trifecta break above)
 - [S] **Kill switch:** N/A (tier: Lite; runs only when invoked)

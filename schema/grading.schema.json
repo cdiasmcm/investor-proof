@@ -1,0 +1,121 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "is_pitch",
+    "company_name",
+    "summary",
+    "criteria",
+    "strengths",
+    "red_flags",
+    "flags"
+  ],
+  "properties": {
+    "is_pitch": {
+      "type": "boolean"
+    },
+    "company_name": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string",
+      "description": "2-3 sentences: overall verdict as an investor would say it"
+    },
+    "criteria": {
+      "type": "array",
+      "description": "exactly 13 items, one per criterion id",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "level",
+          "rationale",
+          "evidence",
+          "action"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "C01",
+              "C02",
+              "C03",
+              "C04",
+              "C05",
+              "C06",
+              "C07",
+              "C08",
+              "C09",
+              "C10",
+              "C11",
+              "C12",
+              "C13"
+            ]
+          },
+          "level": {
+            "type": "integer",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "description": "1-3 sentences: why this level, what is missing"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "up to 3 verbatim transcript quotes"
+          },
+          "action": {
+            "type": "string",
+            "description": "one concrete, pitch-specific action to raise the level; empty if level 4"
+          }
+        }
+      }
+    },
+    "strengths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "up to 5"
+    },
+    "red_flags": {
+      "type": "array",
+      "description": "up to 6",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "issue",
+          "quotes"
+        ],
+        "properties": {
+          "issue": {
+            "type": "string"
+          },
+          "quotes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

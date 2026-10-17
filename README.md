@@ -54,6 +54,42 @@ Levels map to 0 / 25 / 50 / 75 / 100% of each weight. Bands: Investor-ready ≥ 
 Promising ≥ 55, Weak ≥ 40, Not ready below 40. To change the rubric, edit `rubric/rubric.json`
 (weights must sum to 100; `bun test` checks it).
 
+## Two ways to run it
+| Where | What the model returns | Who builds the HTML | Where the report goes |
+|-------|------------------------|---------------------|-----------------------|
+| **Locally** (`bun src/score.ts transcript.txt`) | JSON (`prompt/GRADING.md`) | Code (`src/render.ts`), quote-checked and scored in code | Next to the transcript |
+| **Automation that saves the model's reply as a file** (e.g. n8n: fetch `prompt/SYSTEM.md` + `rubric/rubric.json` → LLM → file → email) | The finished HTML report (`prompt/SYSTEM.md`) | The model, following an exact template generated from `src/render.ts` | Wherever your automation sends it |
+
+In the second mode the layout is **instructed, not enforced**: `prompt/SYSTEM.md` embeds a complete example
+report with the real CSS and markup, plus the scoring arithmetic, so any capable model reproduces the
+format. Quote checking and the arithmetic are done by the model there. For code-enforced results in an
+automation, run `dist/investorproof.js` in a code step (below).
+
+Raw URLs for automations:
+- `https://raw.githubusercontent.com/cdiasmcm/investor-proof/main/prompt/SYSTEM.md`
+- `https://raw.githubusercontent.com/cdiasmcm/investor-proof/main/rubric/rubric.json`
+
+## Use it with any LLM (Claude, Gemini, GPT, local models)
+The report format is fixed by code, not by the model. Every model only returns JSON that matches
+[`schema/grading.schema.json`](schema/grading.schema.json); InvestorProof validates it, scores it and
+renders the same HTML layout every time. Tests lock that layout (`src/format.test.ts`).
+
+[`dist/investorproof.js`](dist/investorproof.js) is a single dependency-free script for any JavaScript
+runtime (n8n Code node, Node, a browser). It defines `InvestorProof`:
+
+```js
+// 1. Prompts for whatever LLM you call
+const system = InvestorProof.systemPrompt();          // instructions + rubric + JSON contract
+const user = InvestorProof.userPrompt(transcript);
+// 2. Send them to Claude, Gemini, GPT or another model; ask for JSON (use its JSON/schema mode if it has one)
+// 3. Turn the model reply (text or object) into the report
+const out = InvestorProof.finalize({ grading: modelReply, transcript, model: "gemini-2.5-pro", source: "pitch.ogg" });
+if (out.ok) { /* out.html, out.envelope.result.total_score */ } else { /* out.errors: retry the model call */ }
+```
+
+In n8n, paste `dist/investorproof.js` at the top of a Code node and add the lines above below it.
+Rebuild it after changing the rubric or renderer: `bun scripts/build.ts` (`bun test` fails if it is stale).
+
 ## Privacy
 The transcript is sent to the model provider through your Claude Code login. Reports stay on your
 disk. Don't commit real transcripts or reports: `.gitignore` excludes `reports/`, `transcripts/`,
@@ -67,8 +103,12 @@ prediction of funding outcomes.
 | Path | What |
 |------|------|
 | `rubric/` | `PERFECT-PITCH.md` (for people) and `rubric.json` (what the agent uses) |
-| `prompt/SYSTEM.md` | Grading instructions |
-| `src/` | `score.ts` (CLI), `lib.ts` (checks + scoring), `render.ts` (HTML), tests |
+| `prompt/GRADING.md` | Grading instructions for local, code-rendered runs (model returns JSON) |
+| `prompt/SYSTEM.md` | Generated prompt for automations: the model returns the finished HTML report |
+| `src/` | `score.ts` (CLI), `portable.ts` (model-agnostic core), `lib.ts` (checks + scoring), `render.ts` (HTML), tests |
+| `dist/investorproof.js` | Generated single-file build of the core for n8n, Node or browsers |
+| `schema/grading.schema.json` | The JSON every model must return |
+| `scripts/build.ts` | Regenerates `dist/` and `schema/` |
 | `samples/` | Fictional test transcripts: strong, weak, prompt-injection |
 | `AGENT.md`, `io/`, `evals/`, `CHANGELOG.md`, `DECISIONS.md`, `STATE.md`, `reviews/` | Agent design docs (8 blocks: purpose, steps, input, output, tools, controls, evals, operations) |
 

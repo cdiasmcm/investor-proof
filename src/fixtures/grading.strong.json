@@ -1,0 +1,27 @@
+{
+  "is_pitch": true,
+  "company_name": "ShelfSense",
+  "summary": "A tight, evidence-heavy pitch with real pilot data and worked unit economics. Competition and exit are the weak spots, and the market-size figure doesn't match its own arithmetic.",
+  "criteria": [
+    { "id": "C01", "level": 4, "rationale": "Clear one-line purpose with a memorable analogy in the opening seconds.", "evidence": ["ShelfSense predicts which fresh products an independent grocery store will throw away next week"], "action": "" },
+    { "id": "C02", "level": 4, "rationale": "Specific customer, quantified pain and today's workaround.", "evidence": ["that is up to 360,000 dollars in the bin"], "action": "" },
+    { "id": "C03", "level": 4, "rationale": "Shows how it works and a before/after story.", "evidence": ["ShelfSense connects to the store's point-of-sale system in about twenty minutes"], "action": "" },
+    { "id": "C04", "level": 3, "rationale": "Strong interview counts and pilot results; commitments are LOIs, not revenue at scale.", "evidence": ["we interviewed 41 store owners and produce managers and surveyed another 130"], "action": "Report paid conversions as monthly recurring revenue and name the cooperatives' signed terms." },
+    { "id": "C05", "level": 2, "rationale": "Beachhead is defined but the market figure doesn't match the stated arithmetic.", "evidence": ["that is roughly 250 million dollars a year"], "action": "Show the math: 21,000 stores x $3,588 a year = about $75M, and source the store count." },
+    { "id": "C06", "level": 3, "rationale": "Two drivers named, neither sourced.", "evidence": ["Cloud point-of-sale systems now expose their data through open connections"], "action": "Cite a source for each driver." },
+    { "id": "C07", "level": 1, "rationale": "Competition dismissed in one line.", "evidence": ["Mostly our competitor is the notebook."], "action": "Name two or three real alternatives and state a defensible advantage." },
+    { "id": "C08", "level": 3, "rationale": "Price, margin, CAC and LTV are all stated; churn is early data.", "evidence": ["We charge 299 dollars per store per month."], "action": "Show churn by cohort from the pilot." },
+    { "id": "C09", "level": 3, "rationale": "Channel and 90-day plan are concrete.", "evidence": ["In the first 90 days after funding we will onboard the 140 stores under our letters of intent."], "action": "Add the sales team size and pipeline conversion rates." },
+    { "id": "C10", "level": 3, "rationale": "Relevant founder experience and one strong advisor.", "evidence": ["I spent eight years as a buyer for a regional grocery wholesaler"], "action": "Name the open roles you will hire first." },
+    { "id": "C11", "level": 3, "rationale": "Projection, assumptions and a sensitivity case are given.", "evidence": ["We reach break-even in month 20 with about 700 stores."], "action": "Show a 3-year P&L table with cash flow." },
+    { "id": "C12", "level": 2, "rationale": "Clear raise and use of funds, no exit.", "evidence": ["We are raising 1.5 million dollars on a convertible note."], "action": "Name likely acquirers and the note's terms." },
+    { "id": "C13", "level": 3, "rationale": "Clear arc and close; a little long in the financials.", "evidence": ["Join us, and help us put a forecasting team in every independent grocery store."], "action": "Trim the financials and finish on the ask." }
+  ],
+  "strengths": ["Quantified problem", "Pilot with before/after numbers", "Worked unit economics"],
+  "red_flags": [
+    { "issue": "Market size contradicts its own arithmetic", "quotes": ["that is roughly 250 million dollars a year"] },
+    { "issue": "Invented quote that must be dropped by code", "quotes": ["we already have ten thousand paying stores"] },
+    { "issue": "No exit or likely acquirers discussed", "quotes": [] }
+  ],
+  "flags": ["fictional_sample"]
+}

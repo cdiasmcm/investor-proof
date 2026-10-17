@@ -9,3 +9,5 @@ Resume here → Score 3–5 real pitch transcripts by hand with `rubric/PERFECT-
 - 2026-10-16 — maintainer — Standards audit (v0.2.1): 3 PASS, 5 GAPS; blocking: no real golden cases, ungrounded red-flag quotes, unpinned model. Report in reviews/
 - 2026-10-16 — maintainer — v0.3.0: fixed audit actions 1 and 2 (grounded red flags, pinned model, budget cap, versioned cache). Open: real golden cases
 - 2026-10-16 — maintainer — v0.4.0: renamed to InvestorProof; prepared first public push
+- 2026-10-16 — maintainer — v0.5.0: model-agnostic core + portable bundle; HTML format locked by tests (18 pass)
+- 2026-10-16 — maintainer — v0.6.0: direct-HTML prompt for the n8n flow (simulated call matched the reference CSS and sections); local runs unchanged

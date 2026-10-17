@@ -1,0 +1,267 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`report HTML matches the locked snapshot 1`] = `
+"<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>InvestorProof — ShelfSense</title>
+<style>
+:root{--bg:#f7f7f5;--card:#fff;--ink:#1d1f23;--muted:#6b7078;--line:#e4e4e0;--accent:#2f6fde;--good:#1f9d63;--warn:#d98a1c;--bad:#d2453b;--track:#ececE8}
+@media (prefers-color-scheme:dark){:root{--bg:#141518;--card:#1d1f23;--ink:#ececec;--muted:#9aa0a8;--line:#2e3036;--accent:#6b9cff;--good:#3ccf8e;--warn:#f0ad4e;--bad:#ff6b61;--track:#2a2c31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:980px;margin:0 auto;padding:28px 16px 60px}
+h1{font-size:26px;margin:0 0 4px}h2{font-size:18px;margin:32px 0 12px}.muted{color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.hero{display:flex;gap:28px;align-items:center;flex-wrap:wrap}.ring{width:170px;height:170px;flex:none}
+.ring-bg{fill:none;stroke:var(--track);stroke-width:12}.ring-fg{fill:none;stroke:var(--accent);stroke-width:12;stroke-linecap:round}
+.ring-num{font-size:30px;font-weight:700;text-anchor:middle;fill:var(--ink)}.ring-sub{font-size:9.5px;text-anchor:middle;fill:var(--muted)}
+.band{display:inline-block;padding:3px 10px;border-radius:99px;background:var(--accent);color:#fff;font-weight:600;font-size:13px}
+.hero-text{flex:1;min-width:260px}
+ul.actions{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.action{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:10px;padding:12px 16px}
+.action.soft{border-left-color:var(--warn)}.action p{margin:6px 0 0}
+.action-head{font-weight:600;display:flex;gap:8px;align-items:center;flex-wrap:wrap}.gain{margin-left:auto;color:var(--good);font-size:13px;font-weight:600}
+.cid{font:600 11px ui-monospace,monospace;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:1px 5px}
+.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:620px}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:middle}th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+tr.detail td{padding-top:0;border-bottom:1px solid var(--line)}tr:has(+tr.detail) td{border-bottom:none}
+.num{text-align:right;white-space:nowrap}.bar-cell{width:28%}.bar{height:8px;background:var(--track);border-radius:99px;overflow:hidden}.bar div{height:100%;background:var(--accent)}
+.lvl{font-size:12px;padding:2px 8px;border-radius:99px;white-space:nowrap;border:1px solid var(--line)}
+.l0{color:var(--bad)}.l1{color:var(--bad)}.l2{color:var(--warn)}.l3{color:var(--accent)}.l4{color:var(--good)}
+details summary{cursor:pointer;color:var(--muted);font-size:13px}details p{margin:6px 0}
+.quotes{margin:6px 0;padding-left:18px;color:var(--muted);font-style:italic}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media (max-width:720px){.cols{grid-template-columns:1fr}}
+details.more{margin-top:16px}details.more>summary{display:inline-flex;align-items:center;gap:8px;list-style:none;padding:8px 16px;border:1px solid var(--line);border-radius:99px;background:var(--card);color:var(--ink);font-size:14px;font-weight:600}
+details.more>summary::-webkit-details-marker{display:none}details.more>summary::before{content:"+";color:var(--accent);font-weight:700}
+details.more[open]>summary::before{content:"−"}details.more>summary:hover{border-color:var(--accent)}details.more>ul{margin-top:12px}
+footer{margin-top:36px;font-size:12px;color:var(--muted)}
+</style></head><body><main>
+<p class="muted">InvestorProof Report · 2026-01-01</p>
+<h1>ShelfSense</h1>
+
+<section class="card hero">
+  <svg viewBox="0 0 128 128" class="ring" role="img" aria-label="Score 73 out of 100">
+  <circle cx="64" cy="64" r="54" class="ring-bg"/>
+  <circle cx="64" cy="64" r="54" class="ring-fg" stroke-dasharray="339.3" stroke-dashoffset="91.6" transform="rotate(-90 64 64)"/>
+  <text x="64" y="62" class="ring-num">73%</text><text x="64" y="84" class="ring-sub">of perfect pitch</text></svg>
+  <div class="hero-text">
+    <span class="band">Strong</span> <span class="muted">Credible pitch with a few gaps an investor will probe</span>
+    <p>A tight, evidence-heavy pitch with real pilot data and worked unit economics. Competition and exit are the weak spots, and the market-size figure doesn&#39;t match its own arithmetic.</p>
+    <p class="muted">A perfect pitch scores 100%: investor-grade on all 13 criteria of the rubric built from a review of 23 early-stage pitch decks.</p>
+  </div>
+</section>
+
+<h2>Score breakdown</h2>
+<div class="card table-wrap"><table>
+  <thead><tr><th>Criterion</th><th class="num">Weight</th><th>Level</th><th>Share earned</th><th class="num">Points</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><span class="cid">C01</span> Company purpose (the hook)</td>
+      <td class="num">5</td>
+      <td><span class="lvl l4">4 · Investor-grade</span></td>
+      <td class="bar-cell"><div class="bar"><div style="width:100%"></div></div></td>
+      <td class="num"><b>5</b></td>
+    </tr>
+    <tr class="detail"><td colspan="5">
+      <details><summary>Why 4/4</summary>
+        <p>Clear one-line purpose with a memorable analogy in the opening seconds.</p>
+        <ul class="quotes"><li>“ShelfSense predicts which fresh products an independent grocery store will throw away next week”</li></ul>
+      </details>
+    </td></tr>
+    <tr>
+      <td><span class="cid">C02</span> Problem</td>
+      <td class="num">9</td>
+      <td><span class="lvl l4">4 · Investor-grade</span></td>
+      <td class="bar-cell"><div class="bar"><div style="width:100%"></div></div></td>
+      <td class="num"><b>9</b></td>
+    </tr>
+    <tr class="detail"><td colspan="5">
+      <details><summary>Why 4/4</summary>
+        <p>Specific customer, quantified pain and today&#39;s workaround.</p>
+        <ul class="quotes"><li>“that is up to 360,000 dollars in the bin”</li></ul>
+      </details>
+    </td></tr>
+    <tr>
+      <td><span class="cid">C03</span> Solution and how it works</td>
+      <td class="num">7</td>
+      <td><span class="lvl l4">4 · Investor-grade</span></td>
+      <td class="bar-cell"><div class="bar"><div style="width:100%"></div></div></td>
+      <td class="num"><b>7</b></td>
+    </tr>
+    <tr class="detail"><td colspan="5">
+      <details><summary>Why 4/4</summary>
+        <p>Shows how it works and a before/after story.</p>
+        <ul class="quotes"><li>“ShelfSense connects to the store&#39;s point-of-sale system in about twenty minutes”</li></ul>
+      </details>
+    </td></tr>
+    <tr>
+      <td><span class="cid">C04</span> Customer validation and traction</td>
+      <td class="num">12</td>
+      <td><span class="lvl l3">3 · Solid</span></td>
+      <td class="bar-cell"><div class="bar"><div style="width:75%"></div></div></td>
+      <td class="num"><b>9</b></td>
+    </tr>
+    <tr class="detail"><td colspan="5">
+      <details><summary>Why 3/4</summary>
+        <p>Strong interview counts and pilot results; commitments are LOIs, not revenue at scale.</p>
+        <ul class="quotes"><li>“we interviewed 41 store owners and produce managers and surveyed another 130”</li></ul>
+      </details>
+    </td></tr>
+    <tr>
+      <td><span class="cid">C05</span> Market size and target customer</td>
+      <td class="num">8</td>
+      <td><span class="lvl l2">2 · Partial</span></td>
+      <td class="bar-cell"><div class="bar"><div style="width:50%"></div></div></td>
+      <td class="num"><b>4</b></td>
+    </tr>
+    <tr class="detail"><td colspan="5">
+      <details><summary>Why 2/4</summary>
+        <p>Beachhead is defined but the market figure doesn&#39;t match the stated arithmetic.</p>
+        <ul class="quotes"><li>“that is roughly 250 million dollars a year”</li></ul>
+      </details>
+    </td></tr>
+    <tr>
+      <td><span class="cid">C06</span> Why now (market drivers)</td>
+      <td class="num">3</td>
+      <td><span class="lvl l3">3 · Solid</span></td>
+      <td class="bar-cell"><div class="bar"><div style="width:75%"></div></div></td>
+      <td class="num"><b>2.25</b></td>
+    </tr>
+    <tr class="detail"><td colspan="5">
+      <details><summary>Why 3/4</summary>
+        <p>Two drivers named, neither sourced.</p>
+        <ul class="quotes"><li>“Cloud point-of-sale systems now expose their data through open connections”</li></ul>
+      </details>
+    </td></tr>
+    <tr>
+      <td><span class="cid">C07</span> Competition and defensible advantage</td>
+      <td class="num">8</td>
+      <td><span class="lvl l1">1 · Mentioned</span></td>
+      <td class="bar-cell"><div class="bar"><div style="width:25%"></div></div></td>
+      <td class="num"><b>2</b></td>
+    </tr>
+    <tr class="detail"><td colspan="5">
+      <details><summary>Why 1/4</summary>
+        <p>Competition dismissed in one line.</p>
+        <ul class="quotes"><li>“Mostly our competitor is the notebook.”</li></ul>
+      </details>
+    </td></tr>
+    <tr>
+      <td><span class="cid">C08</span> Business model and unit economics</td>
+      <td class="num">12</td>
+      <td><span class="lvl l3">3 · Solid</span></td>
+      <td class="bar-cell"><div class="bar"><div style="width:75%"></div></div></td>
+      <td class="num"><b>9</b></td>
+    </tr>
+    <tr class="detail"><td colspan="5">
+      <details><summary>Why 3/4</summary>
+        <p>Price, margin, CAC and LTV are all stated; churn is early data.</p>
+        <ul class="quotes"><li>“We charge 299 dollars per store per month.”</li></ul>
+      </details>
+    </td></tr>
+    <tr>
+      <td><span class="cid">C09</span> Go-to-market, launch and growth plan</td>
+      <td class="num">9</td>
+      <td><span class="lvl l3">3 · Solid</span></td>
+      <td class="bar-cell"><div class="bar"><div style="width:75%"></div></div></td>
+      <td class="num"><b>6.75</b></td>
+    </tr>
+    <tr class="detail"><td colspan="5">
+      <details><summary>Why 3/4</summary>
+        <p>Channel and 90-day plan are concrete.</p>
+        <ul class="quotes"><li>“In the first 90 days after funding we will onboard the 140 stores under our letters of intent.”</li></ul>
+      </details>
+    </td></tr>
+    <tr>
+      <td><span class="cid">C10</span> Team and advisors</td>
+      <td class="num">7</td>
+      <td><span class="lvl l3">3 · Solid</span></td>
+      <td class="bar-cell"><div class="bar"><div style="width:75%"></div></div></td>
+      <td class="num"><b>5.25</b></td>
+    </tr>
+    <tr class="detail"><td colspan="5">
+      <details><summary>Why 3/4</summary>
+        <p>Relevant founder experience and one strong advisor.</p>
+        <ul class="quotes"><li>“I spent eight years as a buyer for a regional grocery wholesaler”</li></ul>
+      </details>
+    </td></tr>
+    <tr>
+      <td><span class="cid">C11</span> Financials and assumptions</td>
+      <td class="num">7</td>
+      <td><span class="lvl l3">3 · Solid</span></td>
+      <td class="bar-cell"><div class="bar"><div style="width:75%"></div></div></td>
+      <td class="num"><b>5.25</b></td>
+    </tr>
+    <tr class="detail"><td colspan="5">
+      <details><summary>Why 3/4</summary>
+        <p>Projection, assumptions and a sensitivity case are given.</p>
+        <ul class="quotes"><li>“We reach break-even in month 20 with about 700 stores.”</li></ul>
+      </details>
+    </td></tr>
+    <tr>
+      <td><span class="cid">C12</span> The ask, use of funds and investor return</td>
+      <td class="num">7</td>
+      <td><span class="lvl l2">2 · Partial</span></td>
+      <td class="bar-cell"><div class="bar"><div style="width:50%"></div></div></td>
+      <td class="num"><b>3.5</b></td>
+    </tr>
+    <tr class="detail"><td colspan="5">
+      <details><summary>Why 2/4</summary>
+        <p>Clear raise and use of funds, no exit.</p>
+        <ul class="quotes"><li>“We are raising 1.5 million dollars on a convertible note.”</li></ul>
+      </details>
+    </td></tr>
+    <tr>
+      <td><span class="cid">C13</span> Delivery and storytelling</td>
+      <td class="num">6</td>
+      <td><span class="lvl l3">3 · Solid</span></td>
+      <td class="bar-cell"><div class="bar"><div style="width:75%"></div></div></td>
+      <td class="num"><b>4.5</b></td>
+    </tr>
+    <tr class="detail"><td colspan="5">
+      <details><summary>Why 3/4</summary>
+        <p>Clear arc and close; a little long in the financials.</p>
+        <ul class="quotes"><li>“Join us, and help us put a forecasting team in every independent grocery store.”</li></ul>
+      </details>
+    </td></tr></tbody>
+  <tfoot><tr><td><b>Total</b></td><td class="num">100</td><td></td><td></td><td class="num"><b>73</b></td></tr></tfoot>
+</table></div>
+
+<h2>Must-have actions to improve your pitch</h2>
+<ul class="actions">
+    <li class="action"><div class="action-head"><span class="cid">C07</span> Competition and defensible advantage
+      <span class="gain">+6 pts possible</span></div><p>Name two or three real alternatives and state a defensible advantage.</p></li>
+    <li class="action"><div class="action-head"><span class="cid">C05</span> Market size and target customer
+      <span class="gain">+4 pts possible</span></div><p>Show the math: 21,000 stores x $3,588 a year = about $75M, and source the store count.</p></li>
+    <li class="action"><div class="action-head"><span class="cid">C12</span> The ask, use of funds and investor return
+      <span class="gain">+3.5 pts possible</span></div><p>Name likely acquirers and the note&#39;s terms.</p></li>
+    <li class="action"><div class="action-head"><span class="cid">C04</span> Customer validation and traction
+      <span class="gain">+3 pts possible</span></div><p>Report paid conversions as monthly recurring revenue and name the cooperatives&#39; signed terms.</p></li>
+    <li class="action"><div class="action-head"><span class="cid">C08</span> Business model and unit economics
+      <span class="gain">+3 pts possible</span></div><p>Show churn by cohort from the pilot.</p></li></ul>
+
+<details class="more"><summary>Other improvements (5)</summary>
+  <ul class="actions">
+    <li class="action soft"><div class="action-head"><span class="cid">C09</span> Go-to-market, launch and growth plan
+      <span class="gain">+2.25 pts possible</span></div><p>Add the sales team size and pipeline conversion rates.</p></li>
+    <li class="action soft"><div class="action-head"><span class="cid">C10</span> Team and advisors
+      <span class="gain">+1.75 pts possible</span></div><p>Name the open roles you will hire first.</p></li>
+    <li class="action soft"><div class="action-head"><span class="cid">C11</span> Financials and assumptions
+      <span class="gain">+1.75 pts possible</span></div><p>Show a 3-year P&amp;L table with cash flow.</p></li>
+    <li class="action soft"><div class="action-head"><span class="cid">C13</span> Delivery and storytelling
+      <span class="gain">+1.5 pts possible</span></div><p>Trim the financials and finish on the ask.</p></li>
+    <li class="action soft"><div class="action-head"><span class="cid">C06</span> Why now (market drivers)
+      <span class="gain">+0.75 pts possible</span></div><p>Cite a source for each driver.</p></li></ul>
+</details>
+
+<div class="cols">
+  <section><h2>What worked</h2><div class="card"><ul><li>Quantified problem</li><li>Pilot with before/after numbers</li><li>Worked unit economics</li></ul></div></section>
+  <section><h2>Red flags an investor will raise</h2><div class="card"><ul><li><b>Market size contradicts its own arithmetic</b><ul class="quotes"><li>“that is roughly 250 million dollars a year”</li></ul></li><li><b>No exit or likely acquirers discussed</b></li></ul></div></section>
+</div>
+
+<footer>
+  <p><b>Not scored from a transcript:</b> Slide design and visuals: not visible in a transcript · Live presence and Q&amp;A: judged in the room, not from text.</p>
+  <p>Source: strong-pitch.txt · 767 words · model any-model · agent v0.6.0 · rubric v1.1.0 · fixture</p>
+  <p>Levels are AI-graded and every quote is checked against the transcript; points and the total are computed by code. Treat it as coaching, not an investment verdict.</p>
+</footer>
+</main></body></html>"
+`;
