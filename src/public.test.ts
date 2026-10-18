@@ -10,10 +10,19 @@ const SKIP_FILES = new Set([".publiccheck-denylist", "public.test.ts"]);
 const GENERATED = /-[0-9a-f]{12}\.(html|json)$/; // reports written next to transcripts (git-ignored)
 const TEXT = /\.(md|json|ts|txt|html|ya?ml)$|^(LICENSE|\.gitignore)$/;
 
+// Files git ignores are never published (e.g. private notes in docs/), so the guard skips them.
+// Without git (a plain download), nothing is skipped and every text file is checked.
+const ignored = new Set<string>();
+try {
+  const r = Bun.spawnSync(["git", "ls-files", "--others", "--ignored", "--exclude-standard"], { cwd: ROOT });
+  if (r.exitCode === 0) for (const l of r.stdout.toString().split("\n")) if (l.trim()) ignored.add(join(ROOT, l.trim()));
+} catch {}
+
 function files(dir: string): string[] {
   return readdirSync(dir).flatMap((name) => {
     const p = join(dir, name);
     if (statSync(p).isDirectory()) return SKIP_DIRS.has(name) ? [] : files(p);
+    if (ignored.has(p)) return [];
     if (SKIP_FILES.has(name) || GENERATED.test(name) || !TEXT.test(name)) return [];
     if (/\.(vtt|srt)$/.test(name)) return [];
     return [p];
