@@ -3,11 +3,10 @@
 Resume here → Score 3–5 real pitch transcripts by hand with `rubric/PERFECT-PITCH.md`, run the agent on the same files, and add them as G001+ in `evals/GOLDEN-SET.md` with both totals.
 
 ## Open items (2026-10-17)
-- **Deck:** https://claude.ai/artifact/T6xbL9vnu8zzyFGV3QK3db (7 slides, private; share via the Share menu). Script: `docs/pitch-script.md` (local only, gitignored); scores 60–62% on InvestorProof.
-- **Deck placeholders:** meetup member count (slide 4 notes), a named investor judge, confirm the presenter line.
+- **Private items** (deck link, speaker script, placeholders): see `docs/HANDOFF.md` (local only, gitignored).
 - **n8n:** switch the Gemini node from "Gateway credits" to your own Gemini API key (fixes the 524 timeout); use a stable model; turn on Retry On Fail. Then a live test: email body still shows the summary, attachment has no stray text.
 - **Calibration:** golden set G001+ (20 real human-scored transcripts); 2 investor judges by Dec 15; targets by Jan 16, 2027.
-- **Repo:** v0.6.1 on GitHub `main` (`ef717bd`). Plans: `C:Userscdias.claudeplanswhere-can-i-find-buzzing-crystal.md`.
+- **Repo:** v0.6.1 on GitHub `main` (`ef717bd`).
 
 ## Log
 <!-- Append-only. Newest at the bottom. Format: - YYYY-MM-DD — who — what was done / what is pending -->
