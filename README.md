@@ -1,6 +1,6 @@
-# InvestorProof
+# What are you building?
 
-See your pitch the way a venture investor does. InvestorProof reads a pitch **transcript**, grades it
+See your pitch the way a venture investor does. The agent reads a pitch **transcript**, grades it
 against a 13-criterion "perfect pitch" rubric and writes an HTML report with:
 
 - one **total score** out of 100 (a perfect pitch scores 100%)
@@ -63,7 +63,7 @@ Promising ≥ 55, Weak ≥ 40, Not ready below 40. To change the rubric, edit `r
 In the second mode the layout is **instructed, not enforced**: `prompt/SYSTEM.md` embeds a complete example
 report with the real CSS and markup, plus the scoring arithmetic, so any capable model reproduces the
 format. Quote checking and the arithmetic are done by the model there. For code-enforced results in an
-automation, run `dist/investorproof.js` in a code step (below).
+automation, run `dist/what-are-you-building.js` in a code step (below).
 
 Raw URLs for automations:
 - `https://raw.githubusercontent.com/cdiasmcm/investor-proof/main/prompt/SYSTEM.md`
@@ -71,23 +71,23 @@ Raw URLs for automations:
 
 ## Use it with any LLM (Claude, Gemini, GPT, local models)
 The report format is fixed by code, not by the model. Every model only returns JSON that matches
-[`schema/grading.schema.json`](schema/grading.schema.json); InvestorProof validates it, scores it and
+[`schema/grading.schema.json`](schema/grading.schema.json); the agent validates it, scores it and
 renders the same HTML layout every time. Tests lock that layout (`src/format.test.ts`).
 
-[`dist/investorproof.js`](dist/investorproof.js) is a single dependency-free script for any JavaScript
-runtime (n8n Code node, Node, a browser). It defines `InvestorProof`:
+[`dist/what-are-you-building.js`](dist/what-are-you-building.js) is a single dependency-free script for any JavaScript
+runtime (n8n Code node, Node, a browser). It defines `WhatAreYouBuilding`:
 
 ```js
 // 1. Prompts for whatever LLM you call
-const system = InvestorProof.systemPrompt();          // instructions + rubric + JSON contract
-const user = InvestorProof.userPrompt(transcript);
+const system = WhatAreYouBuilding.systemPrompt();          // instructions + rubric + JSON contract
+const user = WhatAreYouBuilding.userPrompt(transcript);
 // 2. Send them to Claude, Gemini, GPT or another model; ask for JSON (use its JSON/schema mode if it has one)
 // 3. Turn the model reply (text or object) into the report
-const out = InvestorProof.finalize({ grading: modelReply, transcript, model: "gemini-2.5-pro", source: "pitch.ogg" });
+const out = WhatAreYouBuilding.finalize({ grading: modelReply, transcript, model: "gemini-2.5-pro", source: "pitch.ogg" });
 if (out.ok) { /* out.html, out.envelope.result.total_score */ } else { /* out.errors: retry the model call */ }
 ```
 
-In n8n, paste `dist/investorproof.js` at the top of a Code node and add the lines above below it.
+In n8n, paste `dist/what-are-you-building.js` at the top of a Code node and add the lines above below it.
 Rebuild it after changing the rubric or renderer: `bun scripts/build.ts` (`bun test` fails if it is stale).
 
 ## Privacy
@@ -96,7 +96,7 @@ disk. Don't commit real transcripts or reports: `.gitignore` excludes `reports/`
 `.srt` and `.vtt` files.
 
 ## Disclaimer
-InvestorProof is a coaching tool. Its scores are AI-assisted opinions, not investment advice or a
+This agent is a coaching tool. Its scores are AI-assisted opinions, not investment advice or a
 prediction of funding outcomes.
 
 ## Repository layout
@@ -106,7 +106,7 @@ prediction of funding outcomes.
 | `prompt/GRADING.md` | Grading instructions for local, code-rendered runs (model returns JSON) |
 | `prompt/SYSTEM.md` | Generated prompt for automations: the model returns the finished HTML report |
 | `src/` | `score.ts` (CLI), `portable.ts` (model-agnostic core), `lib.ts` (checks + scoring), `render.ts` (HTML), tests |
-| `dist/investorproof.js` | Generated single-file build of the core for n8n, Node or browsers |
+| `dist/what-are-you-building.js` | Generated single-file build of the core for n8n, Node or browsers |
 | `schema/grading.schema.json` | The JSON every model must return |
 | `scripts/build.ts` | Regenerates `dist/` and `schema/` |
 | `samples/` | Fictional test transcripts: strong, weak, prompt-injection |

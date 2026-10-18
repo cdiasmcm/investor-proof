@@ -1,15 +1,15 @@
 // Model-agnostic core: the only path from an LLM's grading to the HTML report.
 // Any LLM (Claude, Gemini, GPT, local models) returns JSON matching `gradingSchema()`; this module
 // validates it, scores it in code and renders the fixed HTML layout. The model never writes HTML.
-// No Node/Bun APIs here, so the bundled build (dist/investorproof.js) runs in n8n, browsers or Node.
+// No Node/Bun APIs here, so the bundled build (dist/what-are-you-building.js) runs in n8n, browsers or Node.
 import rubricJson from "../rubric/rubric.json";
 import systemMd from "../prompt/GRADING.md" with { type: "text" }; // JSON-output prompt for code-rendered runs
 import { checkGrading, checkInput, cleanTranscript, score, wordCount, type Grading, type Rubric } from "./lib";
 import { renderHtml } from "./render";
 
-export const AGENT_VERSION = "0.6.1";
-export const PROMPT_VERSION = "1.2.0";
-export const CONTRACT = "investorproof-result v1";
+export const AGENT_VERSION = "0.7.0";
+export const PROMPT_VERSION = "1.2.1";
+export const CONTRACT = "what-are-you-building-result v1";
 export const rubric = rubricJson as Rubric;
 
 const ids = rubric.criteria.map((c) => c.id);

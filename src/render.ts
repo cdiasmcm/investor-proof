@@ -1,4 +1,4 @@
-// InvestorProof: renders the pitch score as one self-contained HTML report (no external assets).
+// What are you building?: renders the pitch score as one self-contained HTML report (no external assets).
 import type { ScoredCriterion } from "./lib";
 
 const esc = (s: string) =>
@@ -52,7 +52,7 @@ export function renderHtml(d: ReportData): string {
 
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>InvestorProof — ${esc(d.company)}</title>
+<title>What are you building? — ${esc(d.company)}</title>
 <style>
 :root{--bg:#f7f7f5;--card:#fff;--ink:#1d1f23;--muted:#6b7078;--line:#e4e4e0;--accent:#2f6fde;--good:#1f9d63;--warn:#d98a1c;--bad:#d2453b;--track:#ececE8}
 @media (prefers-color-scheme:dark){:root{--bg:#141518;--card:#1d1f23;--ink:#ececec;--muted:#9aa0a8;--line:#2e3036;--accent:#6b9cff;--good:#3ccf8e;--warn:#f0ad4e;--bad:#ff6b61;--track:#2a2c31}}
@@ -84,7 +84,7 @@ details.more>summary::-webkit-details-marker{display:none}details.more>summary::
 details.more[open]>summary::before{content:"−"}details.more>summary:hover{border-color:var(--accent)}details.more>ul{margin-top:12px}
 footer{margin-top:36px;font-size:12px;color:var(--muted)}
 </style></head><body><main>
-<p class="muted">InvestorProof Report · ${esc(d.meta.date)}</p>
+<p class="muted">What are you building? Report · ${esc(d.meta.date)}</p>
 <h1>${esc(d.company)}</h1>
 
 <section class="card hero">

@@ -1,3 +1,3 @@
-// Bundle entry: exposes the portable core as globalThis.InvestorProof (see scripts/build.ts).
+// Bundle entry: exposes the portable core as globalThis.WhatAreYouBuilding (see scripts/build.ts).
 import * as core from "./portable";
-(globalThis as any).InvestorProof = core;
+(globalThis as any).WhatAreYouBuilding = core;

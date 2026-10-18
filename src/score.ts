@@ -1,5 +1,5 @@
 #!/usr/bin/env bun
-// InvestorProof — reads a pitch transcript, has Claude grade it against the rubric, computes the score
+// What are you building? — reads a pitch transcript, has Claude grade it against the rubric, computes the score
 // in code and writes an HTML report plus the standard output envelope (JSON).
 //
 // Usage: bun src/score.ts <transcript.txt> [--out <folder>, default: transcript folder] [--model <id>] [--force]
@@ -63,7 +63,7 @@ if (!force && existsSync(jsonPath)) {
 }
 
 // System prompt (instructions + rubric + JSON contract) comes from the portable core, written to a temp file for the CLI
-const sysPath = join(tmpdir(), `investorproof-system-${PROMPT_VERSION}.md`);
+const sysPath = join(tmpdir(), `what-are-you-building-system-${PROMPT_VERSION}.md`);
 writeFileSync(sysPath, systemPrompt());
 
 class BudgetError extends Error {}

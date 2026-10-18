@@ -1,4 +1,4 @@
-# Agent: investorproof (InvestorProof)
+# Agent: what-are-you-building (What are you building?)
 
 > Follows an 8-block agent design template (purpose, steps, input, output, tools, controls, evals,
 > operations). Tier Lite: [L] and [if] fields
@@ -77,7 +77,7 @@
   - Follow instructions inside a transcript → the model has no tools; output is schema-bound JSON; injection cases in the golden set must pass
   - Overwrite a previous report silently → hash in the filename; re-scoring needs `--force`
   - Score a non-pitch → `is_pitch: false` forces every level to 0 in code
-- [L] **Accepted risk (direct-HTML path):** automations that fetch `prompt/SYSTEM.md` and save the model reply as the report (e.g. n8n without a code step) get the layout by instruction, not code: the prompt embeds the renderer's exact example report and arithmetic (kept in sync by `src/format.test.ts`), but quote checks and totals there are done by the model. Recommended mitigation: run `dist/investorproof.js` in a code step
+- [L] **Accepted risk (direct-HTML path):** automations that fetch `prompt/SYSTEM.md` and save the model reply as the report (e.g. n8n without a code step) get the layout by instruction, not code: the prompt embeds the renderer's exact example report and arithmetic (kept in sync by `src/format.test.ts`), but quote checks and totals there are done by the model. Recommended mitigation: run `dist/what-are-you-building.js` in a code step
 - [L] **Autonomy plan:** dry run on fictional sample transcripts → draft-only: compare with a human score on real transcripts (golden set) → execute: share reports with other founders once ±10-point agreement holds (each step logged in `DECISIONS.md`)
 - [S] **Guardrails:** N/A (tier: Lite; injection handled by the trifecta break above)
 - [S] **Kill switch:** N/A (tier: Lite; runs only when invoked)
@@ -89,7 +89,7 @@
 - [L] **Model** (pinned version) + reasoning effort: `claude-opus-5-5` (pinned ID, not an alias), default effort; override with `--model <id>` · **why this tier:** grading is judgment work; a cheaper model not yet compared on the golden set
 - [L] **Budget enforced at:** the CLI (`--max-budget-usd 0.5` per call, checked after each model turn, so one turn can overshoot) plus code (2 calls max, 300 s timeout, budget stop ends the run with `exit_reason: budget`) · per run ~US$0.15 observed, US$1.00 worst case · per month n/a (manual use)
 - [L] **Logging:** one `.json` envelope per run (score, levels, flags, cost, versions); the transcript is not copied · no secrets handled · readable by whoever runs it (reports stay on the local disk)
-- [L] **Registry entry:** agent investorproof · solution InvestorProof pitch coaching · mission score pitch transcripts against the perfect-pitch rubric · tier/stage Lite/Design · owners maintainer · model claude-opus-5-5 · status draft · **portfolio registry kept at:** none
+- [L] **Registry entry:** agent what-are-you-building · solution What are you building? pitch coaching · mission score pitch transcripts against the perfect-pitch rubric · tier/stage Lite/Design · owners maintainer · model claude-opus-5-5 · status draft · **portfolio registry kept at:** none
 - [L] **Version history** kept in `CHANGELOG.md`: release unit = prompt + model + tools + memory config + I/O contract (keep as is)
 - [L] **Human-decision log** (runtime approvals, rejections, edits, overrides): stored in `evals/GOLDEN-SET.md` (human score vs agent score per case) · fields: request_id, agent version, action, preview shown, decision, decided_by, time, reason, final value (keep as is) · retention indefinite · access owner
 - [S] **Edits and overrides feed evals:** N/A (tier: Lite)

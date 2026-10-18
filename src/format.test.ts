@@ -62,7 +62,7 @@ test("invalid model output is rejected instead of rendered", () => {
 });
 
 test("built artifacts are up to date with the source", async () => {
-  expect(readFileSync(join(ROOT, "dist", "investorproof.js"), "utf8")).toBe(await buildBundle());
+  expect(readFileSync(join(ROOT, "dist", "what-are-you-building.js"), "utf8")).toBe(await buildBundle());
   expect(readFileSync(join(ROOT, "schema", "grading.schema.json"), "utf8")).toBe(schemaJson());
 });
 
@@ -79,7 +79,7 @@ test("prompt/SYSTEM.md (direct-HTML path, e.g. n8n) is up to date and embeds the
 
 test("the standalone bundle renders exactly the same HTML outside Bun", () => {
   const sandbox: any = {};
-  new Function("globalThis", readFileSync(join(ROOT, "dist", "investorproof.js"), "utf8"))(sandbox);
-  const out = sandbox.InvestorProof.finalize({ ...fixed, grading: gradingText, model: "any-model" });
+  new Function("globalThis", readFileSync(join(ROOT, "dist", "what-are-you-building.js"), "utf8"))(sandbox);
+  const out = sandbox.WhatAreYouBuilding.finalize({ ...fixed, grading: gradingText, model: "any-model" });
   expect(out.html).toBe(render(JSON.parse(gradingText)).html);
 });

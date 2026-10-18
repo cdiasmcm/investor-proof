@@ -6,7 +6,7 @@ Resume here → Score 3–5 real pitch transcripts by hand with `rubric/PERFECT-
 - **Private items** (deck link, speaker script, placeholders): see `docs/HANDOFF.md` (local only, gitignored).
 - **n8n:** switch the Gemini node from "Gateway credits" to your own Gemini API key (fixes the 524 timeout); use a stable model; turn on Retry On Fail. Then a live test: email body still shows the summary, attachment has no stray text.
 - **Calibration:** golden set G001+ (20 real human-scored transcripts); 2 investor judges by Dec 15; targets by Jan 16, 2027.
-- **Repo:** v0.6.1 on GitHub `main` (`ef717bd`).
+- **Repo:** v0.6.1 on GitHub `main` (`ef717bd`); v0.7.0 (rename to “What are you building?”) committed locally, not pushed.
 
 ## Log
 <!-- Append-only. Newest at the bottom. Format: - YYYY-MM-DD — who — what was done / what is pending -->
@@ -18,3 +18,4 @@ Resume here → Score 3–5 real pitch transcripts by hand with `rubric/PERFECT-
 - 2026-10-16 — maintainer — v0.5.0: model-agnostic core + portable bundle; HTML format locked by tests (18 pass)
 - 2026-10-16 — maintainer — v0.6.0: direct-HTML prompt for the n8n flow (simulated call matched the reference CSS and sections); local runs unchanged
 - 2026-10-16 — maintainer — v0.6.1: fixed stray email summary, guessed date/model and footer wording in the direct-HTML path; pushed
+- 2026-10-18 — maintainer — v0.7.0: renamed to “What are you building?” (repo name unchanged); deck updated with the new name and a Pitchr row. Not pushed

@@ -3,7 +3,7 @@
 The agent returns a **standard output envelope** (request id, status, exit reason, result, flags, data-quality checks, metrics, versions) as `<name>-<hash>.json` and prints
 it to stdout, plus a human report `<name>-<hash>.html`. This file defines the `result` fields.
 
-**Output contract name + version:** `investorproof-result v1`
+**Output contract name + version:** `what-are-you-building-result v1`
 
 ## Result fields
 | Field | Type | Required | Rule | DQ check | Tier |

@@ -1,4 +1,4 @@
-# InvestorProof — grading instructions (prompt v1.1.0)
+# What are you building? — grading instructions (prompt v1.2.1)
 
 You are a seed-stage investor on a pitch panel. You grade one pitch transcript against the rubric
 below and return JSON only, matching the schema you were given. You do **not** compute the total
