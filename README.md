@@ -114,27 +114,10 @@ prediction of funding outcomes.
 | `AGENT.md`, `io/`, `evals/`, `CHANGELOG.md`, `DECISIONS.md`, `STATE.md`, `reviews/` | Agent design docs (8 blocks: purpose, steps, input, output, tools, controls, evals, operations) |
 
 ## Contributing
-Issues and pull requests are welcome. Use only fictional or anonymized transcripts in examples and tests.
-
-Every pull request into `main` must pass two GitHub checks:
-
-1. **unit-tests**: runs `bun test` (19 tests: scoring rules, report format, publish guard).
-2. **eval-results**: checks that the committed `evals/results.json` is current for your code and that
-   every eval case still meets its expected results. It makes no model calls.
-
-If your change touches `prompt/`, `rubric/`, `src/`, the eval scripts or `evals/cases.json`, run the
-evals yourself and commit the results:
-
-```bash
-bun test
-bun run eval        # scores every case in evals/cases.json with your own claude login
-git add evals/results.json evals/RESULTS.md
-```
-
-The evals run on **your own model account**, about US$0.13 per case on the default model, so the project
-costs the maintainer nothing to keep honest. Changes to docs only don't need a new eval run.
-Eval results are self-reported, so the maintainer re-runs `bun run eval` before merging any change
-that can affect scores.
+Issues and pull requests are welcome. Every pull request must pass two checks: **unit-tests** (`bun test`)
+and **eval-results** (run `bun run eval` on your own machine and commit `evals/results.json` when your change
+can affect scores). See [CONTRIBUTING.md](CONTRIBUTING.md) for the exact steps; evals run on your own model
+account, so the project costs the maintainer nothing to keep honest.
 
 ## License
 [MIT](LICENSE)
