@@ -9,7 +9,7 @@
       "failure_modes": ["FM1", "FM4"],
       "critical": false,
       "expect": {
-        "total": [60, 80],
+        "total": [80, 95],
         "levels": { "C01": ">=3", "C07": "<=2" },
         "red_flags_min": 1
       }
