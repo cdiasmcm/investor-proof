@@ -519,7 +519,7 @@ ${other.length ? `<details class="more"><summary>Other improvements (${other.len
   }
 
   // src/portable.ts
-  var AGENT_VERSION = "0.7.0";
+  var AGENT_VERSION = "0.7.1";
   var PROMPT_VERSION = "1.2.1";
   var CONTRACT = "what-are-you-building-result v1";
   var rubric = rubric_default;

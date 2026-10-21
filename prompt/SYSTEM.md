@@ -56,7 +56,7 @@ must be the HTML document and nothing else.
   quotes) → "Must-have actions to improve your pitch" → "Other improvements (N)" button → "What worked"
   and "Red flags an investor will raise" side by side → footer.
 - Footer: keep the example's sentences; set Source to "transcript", the transcript's word count, the
-  model name, agent v0.7.0 and rubric v1.1.0.
+  model name, agent v0.7.1 and rubric v1.1.0.
 - **Date:** use a date given in the request (YYYY-MM-DD). If none is given, leave the date out: write the
   top line as just "What are you building? Report" and drop the date from the footer. Never guess a date.
 - **Model name:** write "AI model", unless the request explicitly states which model name to print.
@@ -335,7 +335,7 @@ footer{margin-top:36px;font-size:12px;color:var(--muted)}
 
 <footer>
   <p><b>Not scored from a transcript:</b> Slide design and visuals: not visible in a transcript · Live presence and Q&amp;A: judged in the room, not from text.</p>
-  <p>Source: transcript · 767 words · model AI model · agent v0.7.0 · rubric v1.1.0 · </p>
+  <p>Source: transcript · 767 words · model AI model · agent v0.7.1 · rubric v1.1.0 · </p>
   <p>Levels and points were produced by the AI model following the “What are you building?” rubric; treat it as coaching, not an investment verdict.</p>
 </footer>
 </main></body></html>

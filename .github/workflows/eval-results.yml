@@ -1,0 +1,24 @@
+# Checks, on every pull request into main, that the committed eval results (evals/results.json) are current for the
+# code in the PR and still passing. No model calls and no API key: contributors run `bun run eval` locally, on their
+# own model account, and commit the results. The job name "eval-results" is the status check to require for main.
+name: Eval results
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  eval-results:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.3
+      - run: bun scripts/eval-check.ts

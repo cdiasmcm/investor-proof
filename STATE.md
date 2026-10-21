@@ -19,3 +19,4 @@ Resume here → Score 3–5 real pitch transcripts by hand with `rubric/PERFECT-
 - 2026-10-16 — maintainer — v0.6.0: direct-HTML prompt for the n8n flow (simulated call matched the reference CSS and sections); local runs unchanged
 - 2026-10-16 — maintainer — v0.6.1: fixed stray email summary, guessed date/model and footer wording in the direct-HTML path; pushed
 - 2026-10-18 — maintainer — v0.7.0: renamed to “What are you building?” (repo name unchanged); deck updated with the new name and a Pitchr row. Not pushed
+- 2026-10-21 — maintainer — v0.7.1: local evals + `eval-results` PR check (3/3 cases pass, US$0.40 per run). Pending: add `eval-results` as a required check for main

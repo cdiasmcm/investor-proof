@@ -110,11 +110,31 @@ prediction of funding outcomes.
 | `schema/grading.schema.json` | The JSON every model must return |
 | `scripts/build.ts` | Regenerates `dist/` and `schema/` |
 | `samples/` | Fictional test transcripts: strong, weak, prompt-injection |
+| `evals/cases.json` | Eval cases and expected results; `bun run eval` writes `evals/results.json` and `evals/RESULTS.md` |
 | `AGENT.md`, `io/`, `evals/`, `CHANGELOG.md`, `DECISIONS.md`, `STATE.md`, `reviews/` | Agent design docs (8 blocks: purpose, steps, input, output, tools, controls, evals, operations) |
 
 ## Contributing
-Issues and pull requests are welcome. Run `bun test` before opening a PR. Use only fictional or
-anonymized transcripts in examples and tests.
+Issues and pull requests are welcome. Use only fictional or anonymized transcripts in examples and tests.
+
+Every pull request into `main` must pass two GitHub checks:
+
+1. **unit-tests**: runs `bun test` (19 tests: scoring rules, report format, publish guard).
+2. **eval-results**: checks that the committed `evals/results.json` is current for your code and that
+   every eval case still meets its expected results. It makes no model calls.
+
+If your change touches `prompt/`, `rubric/`, `src/`, the eval scripts or `evals/cases.json`, run the
+evals yourself and commit the results:
+
+```bash
+bun test
+bun run eval        # scores every case in evals/cases.json with your own claude login
+git add evals/results.json evals/RESULTS.md
+```
+
+The evals run on **your own model account**, about US$0.13 per case on the default model, so the project
+costs the maintainer nothing to keep honest. Changes to docs only don't need a new eval run.
+Eval results are self-reported, so the maintainer re-runs `bun run eval` before merging any change
+that can affect scores.
 
 ## License
 [MIT](LICENSE)
