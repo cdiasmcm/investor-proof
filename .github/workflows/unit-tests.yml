@@ -20,4 +20,10 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: 1.4.3
-      - run: bun test
+      - name: Run unit tests
+        run: |
+          set -o pipefail
+          bun test 2>&1 | tee bun-test.log
+      - name: Explain the failure and the fix
+        if: failure()
+        run: bun scripts/test-failure-help.ts bun-test.log
