@@ -7,7 +7,7 @@ import systemMd from "../prompt/GRADING.md" with { type: "text" }; // JSON-outpu
 import { checkGrading, checkInput, cleanTranscript, score, wordCount, type Grading, type Rubric } from "./lib";
 import { renderHtml } from "./render";
 
-export const AGENT_VERSION = "0.7.0";
+export const AGENT_VERSION = "0.7.1";
 export const PROMPT_VERSION = "1.2.1";
 export const CONTRACT = "what-are-you-building-result v1";
 export const rubric = rubricJson as Rubric;

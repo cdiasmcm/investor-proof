@@ -7,6 +7,8 @@ in. Expected results are **criteria, not exact wording**.
 Minimum by stage (real cases): **MVP 20 · Pilot 100 · Scale 300**, with at least 5 per failure mode.
 Real cases use IDs `G001`, `G002`…; fictional sample cases use `S001`… (they don't count toward the minimums).
 
+**Machine-readable cases:** `evals/cases.json` is what `bun run eval` runs and what CI checks; keep this table and that file in sync. Expected results there are ranges and rules (total range, level limits, required flags and must-haves).
+
 **How to add a real case:** record a pitch rehearsal, transcribe it, score it yourself on the rubric
 (13 levels → total), run the agent, then add a row with both totals. The north-star metric is the gap.
 

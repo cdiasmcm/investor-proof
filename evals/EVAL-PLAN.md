@@ -30,14 +30,16 @@
 - [S] **Where they're tracked and who watches them:** N/A (tier: Lite)
 
 ## Graders
-- [L] **Deterministic checks** for everything that can be checked by rule: schema, ids, level range, quote grounding, score arithmetic, must-have selection (`src/lib.test.ts`, 9 tests)
+- [L] **Deterministic checks** for everything that can be checked by rule: schema, ids, level range, quote grounding, score arithmetic, must-have selection (`src/lib.test.ts`, 10 tests)
 - [L] **LLM judge:** none beyond the agent itself at Lite; humans score the golden set · scoring categorical (levels 0–4)
 - [S] **Judge calibrated against SME labels:** N/A (tier: Lite)
 - [S] **SME reviewers:** N/A (tier: Lite)
 - [if: high stakes] **Independent auditor:** N/A (coaching tool, not high stakes)
 
 ## Running the evals
-- [L] **Runs on every change** to prompt, model, rubric or code: `bun test`, then re-run every golden and S-case with `--force` and compare totals with the expected column
+- [L] **How evals run:** the contributor runs `bun run eval` locally (on their own model account) whenever a change touches prompts, rubric, scoring code, the eval scripts or `evals/cases.json`, and commits `evals/results.json`. The cases and their expected results live in `evals/cases.json`.
+- [L] **Enforced on every pull request:** the `eval-results` GitHub check (`scripts/eval-check.ts`, no model calls) fails if the committed results are stale (a fingerprint over every file that can change a score) or if any case misses its expectations; `unit-tests` runs `bun test`. Both are required to merge into `main`.
+- [L] **Trust:** results are self-reported; the maintainer re-runs `bun run eval` before merging changes that can affect scores.
 - [S] **Each case run k times:** N/A (tier: Lite); recommended anyway: run each case 3 times to see score spread
 - [S] **Model choice:** N/A (tier: Lite); next step compares the pinned Opus model with a cheaper model on the golden set
 - [S] **Rollback trigger tied to evals:** N/A (tier: Lite)

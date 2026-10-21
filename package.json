@@ -1,6 +1,6 @@
 {
   "name": "what-are-you-building",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Score a startup pitch transcript the way a venture investor would: one score out of 100, a breakdown and must-have fixes.",
   "license": "MIT",
   "type": "module",
@@ -9,7 +9,9 @@
   "scripts": {
     "score": "bun src/score.ts",
     "build": "bun scripts/build.ts",
-    "test": "bun test"
+    "test": "bun test",
+    "eval": "bun scripts/eval.ts",
+    "eval:check": "bun scripts/eval-check.ts"
   },
   "engines": { "bun": ">=1.1" },
   "keywords": ["pitch", "startup", "venture-capital", "rubric", "llm", "claude"]
