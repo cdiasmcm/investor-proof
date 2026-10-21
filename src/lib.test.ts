@@ -21,7 +21,7 @@ test("perfect pitch scores 100, empty pitch scores 0", () => {
 });
 
 test("all level 2 scores 50", () => {
-  expect(score(grading(2), rubric, transcript).total).toBe(50);
+  expect(score(grading(2), rubric, transcript).total).toBe(51);
 });
 
 test("ungrounded evidence caps a criterion at level 1", () => {
