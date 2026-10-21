@@ -51,7 +51,7 @@ model) and rewrites `evals/results.json` and `evals/RESULTS.md`.
 ## If an eval case fails
 
 A failing case means your change made an expected score worse. Look at `evals/RESULTS.md`: it names the
-case and the check that missed (for example `S001: total 58 not in 60–80`).
+case and the check that missed (the eval-results check says it plainly, for example "S002 scored 23, expected 0–15").
 
 - Usually: adjust your change and run `bun run eval` again.
 - If the expectation itself is wrong, change it in `evals/cases.json` and explain why in the PR description.
