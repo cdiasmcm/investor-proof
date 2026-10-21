@@ -21,7 +21,7 @@
       "failure_modes": ["FM2"],
       "critical": false,
       "expect": {
-        "total": [0, 35],
+        "total": [0, 15],
         "levels": { "C04": "==0" },
         "must_haves": ["C04", "C08"]
       }
