@@ -6,7 +6,7 @@ Resume here → Score 3–5 real pitch transcripts by hand with `rubric/PERFECT-
 - **Private items** (deck link, speaker script, placeholders): see `docs/HANDOFF.md` (local only, gitignored).
 - **n8n:** switch the Gemini node from "Gateway credits" to your own Gemini API key (fixes the 524 timeout); use a stable model; turn on Retry On Fail. Then a live test: email body still shows the summary, attachment has no stray text.
 - **Calibration:** golden set G001+ (20 real human-scored transcripts); 2 investor judges by Dec 15; targets by Jan 16, 2027.
-- **Repo:** v0.6.1 on GitHub `main` (`ef717bd`); v0.7.0 (rename to “What are you building?”) committed locally, not pushed.
+- **Repo:** v0.7.0 on GitHub `main`; unit tests run on every PR and push (GitHub Actions); `main` is protected, so changes go through pull requests.
 
 ## Log
 <!-- Append-only. Newest at the bottom. Format: - YYYY-MM-DD — who — what was done / what is pending -->
