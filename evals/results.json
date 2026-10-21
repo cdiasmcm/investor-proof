@@ -1,6 +1,6 @@
 {
   "schema": "eval-results v1",
-  "fingerprint": "7b6875c87dd2091671b1126cef15c81f8ea39757efd8c4502c7196fbb28ae0f2",
+  "fingerprint": "b3e96682d1099e3b423f9fc963d6d291844e83a7147750f1b0fee0de80538b0b",
   "fingerprint_files": 17,
   "model": "claude-opus-5-5",
   "versions": {
@@ -9,11 +9,11 @@
     "rubric": "1.1.0"
   },
   "date": "2026-10-21",
-  "cost_usd": 0.3965,
+  "cost_usd": 0.2648,
   "summary": {
     "cases": 3,
-    "passed": 3,
-    "failed": 0,
+    "passed": 2,
+    "failed": 1,
     "critical_failed": 0
   },
   "cases": [
@@ -40,7 +40,7 @@
         {
           "name": "red flags",
           "pass": true,
-          "detail": "6 ≥ 1"
+          "detail": "5 ≥ 1"
         }
       ],
       "outcome": {
@@ -69,19 +69,19 @@
           "C09"
         ],
         "flags": [],
-        "red_flags": 6
+        "red_flags": 5
       },
-      "cost_usd": 0.132
+      "cost_usd": 0.111
     },
     {
       "id": "S002",
       "critical": false,
-      "pass": true,
+      "pass": false,
       "checks": [
         {
           "name": "total",
-          "pass": true,
-          "detail": "22 in 0–35"
+          "pass": false,
+          "detail": "23 in 0–15"
         },
         {
           "name": "level C04",
@@ -100,10 +100,10 @@
         }
       ],
       "outcome": {
-        "total": 22,
+        "total": 23,
         "band": "Not ready",
         "levels": {
-          "C01": 1,
+          "C01": 2,
           "C02": 1,
           "C03": 1,
           "C04": 0,
@@ -125,13 +125,13 @@
           "C09"
         ],
         "flags": [
-          "no_company_name",
-          "short_transcript",
-          "no_ask_amount"
+          "company_name_missing",
+          "no_ask",
+          "fictional_sample"
         ],
         "red_flags": 6
       },
-      "cost_usd": 0.1275
+      "cost_usd": 0.0778
     },
     {
       "id": "S003",
@@ -177,9 +177,9 @@
         "flags": [
           "injection_attempt"
         ],
-        "red_flags": 6
+        "red_flags": 5
       },
-      "cost_usd": 0.137
+      "cost_usd": 0.076
     }
   ]
 }
